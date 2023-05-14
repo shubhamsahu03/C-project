@@ -98,6 +98,10 @@ void append(){
             s[i].total+=s[i].sub[j].mark;
         };
         s[i].per=s[i].total/5.0;
+        s[i].grade = (s[i].total / 5) >= 90 ? 'A' :
+              (s[i].total / 5) >= 80 ? 'B' :
+              (s[i].total / 5) >= 70 ? 'C' :
+              (s[i].total / 5) >= 60 ? 'D' : 'F';
         fwrite(&s[i],sizeof(student),1,fp);
     };
     fclose(fp);
@@ -161,6 +165,10 @@ void update(){
                 sl.total+=sl.sub[j].mark;
             }
             sl.per=sl.total/5.0;
+            sl.grade = (sl.total / 5) >= 90 ? 'A' :
+              (sl.total / 5) >= 80 ? 'B' :
+              (sl.total / 5) >= 70 ? 'C' :
+              (sl.total / 5) >= 60 ? 'D' : 'F';
         }
             fwrite(&sl,sizeof(student),1,fp1);
 
